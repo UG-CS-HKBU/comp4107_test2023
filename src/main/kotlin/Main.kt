@@ -321,9 +321,10 @@ class Abandon : Command {
 
 
 var monarchHero: MonarchHero = MonarchFactory.createRandomHero() as MonarchHero
-var heroes = mutableListOf<Hero>(monarchHero);
+var heroes = mutableListOf<Hero>();
 
 fun play() {
+    heroes.add(monarchHero)
     monarchHero.setCommand(Abandon(monarchHero))
     for (i in 0..2) {
         var hero = NoneMonarchFactory.createRandomHero()
